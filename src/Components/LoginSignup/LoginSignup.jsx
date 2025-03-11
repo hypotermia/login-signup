@@ -39,11 +39,12 @@ const LoginSignup = () => {
                 throw new Error(data.message || "Gagal melakukan " + actionType);
             }
 
-            console.log("Response dari server: ", data);
-            if (actionType === "Login" && data.token) {
+            // console.log("Response dari server: ", data);
+            // console.log("token: ", data.data.token);
+            if (actionType === "Login" && data.data.token) {
                 localStorage.setItem("jwtToken", data.token);
-                console.log("Login berhasil! Token disimpan");
-                setTimeout(() => navigate("/home"), 100);
+                // console.log("Login berhasil! Token disimpan");
+                navigate("/home");
             }
 
             // Reset form input
