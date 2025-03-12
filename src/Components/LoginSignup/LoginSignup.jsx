@@ -42,7 +42,7 @@ const LoginSignup = () => {
             // console.log("Response dari server: ", data);
             // console.log("token: ", data.data.token);
             if (actionType === "Login" && data.data.token) {
-                localStorage.setItem("jwtToken", data.token);
+                localStorage.setItem("jwtToken", data.data.token);
                 // console.log("Login berhasil! Token disimpan");
                 navigate("/home");
             }
